@@ -93,6 +93,16 @@ public class GroceryStoreSystem {
                     String newName = sc.nextLine();
 
                     System.out.print("Enter Price: ");
+
+                    if (!sc.hasNextDouble()) {
+
+                        System.out.println(
+                                "Invalid input. Price must be a number.");
+
+                        sc.next();
+                        break;
+                    }
+
                     double price = sc.nextDouble();
 
                     System.out.print("Enter Stock: ");
