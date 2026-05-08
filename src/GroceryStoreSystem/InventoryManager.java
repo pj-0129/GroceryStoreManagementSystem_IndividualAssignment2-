@@ -14,8 +14,7 @@ public class InventoryManager {
     // Load inventory
     public void loadFromFile(String filename) {
 
-        try {
-            BufferedReader br = new BufferedReader(new FileReader(filename));
+        try { BufferedReader br = new BufferedReader(new FileReader(filename));
 
             String line;
 
