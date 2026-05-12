@@ -45,7 +45,6 @@ public class Product {
 
     @Override
     public String toString() {
-        return String.format("%-5d %-15s RM%-8.2f %-5d",
-                id, name, price, stock);
+        return String.format("%-5d %-15s RM%-8.2f %-5d", id, name, price, stock);
     }
 }

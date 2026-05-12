@@ -25,7 +25,7 @@ public class GroceryStoreSystem {
             System.out.println("5.  Remove Product");
             System.out.println("6.  Update Stock");
             System.out.println("7.  Add Item to Cart");
-            System.out.println("8.  Manage Cart");        // covers view/remove/update/clear
+            System.out.println("8.  Manage Cart");
             System.out.println("9.  Undo Last Add");
             System.out.println("10. Checkout");
             System.out.println("11. Save & Exit");
@@ -49,12 +49,15 @@ public class GroceryStoreSystem {
                     System.out.print("Enter ID: ");
                     if (!sc.hasNextInt()) {
                         System.out.println("Invalid input. ID must be a number.");
-                        sc.next(); break;
+                        sc.next();
+                        break;
                     }
                     int id = sc.nextInt();
                     Product p = inventory.searchById(id);
-                    if (p != null) System.out.println(p);
-                    else System.out.println("Product not found.");
+                    if (p != null)
+                        System.out.println(p);
+                    else
+                        System.out.println("Product not found.");
                     break;
 
                 case 3:
@@ -62,15 +65,20 @@ public class GroceryStoreSystem {
                     System.out.print("Enter product name: ");
                     String name = sc.nextLine();
                     ArrayList<Product> result = inventory.searchByName(name);
-                    if (result.isEmpty()) System.out.println("No product found.");
-                    else for (Product pr : result) System.out.println(pr);
+                    if (result.isEmpty())
+                        System.out.println("No product found.");
+                    else {
+                        for (Product pr : result)
+                            System.out.println(pr);
+                    }
                     break;
 
                 case 4:
                     System.out.print("Enter ID: ");
                     if (!sc.hasNextInt()) {
                         System.out.println("Invalid input. ID must be a number.");
-                        sc.next(); break;
+                        sc.next();
+                        break;
                     }
                     int newId = sc.nextInt();
                     sc.nextLine();
@@ -79,13 +87,15 @@ public class GroceryStoreSystem {
                     System.out.print("Enter Price: ");
                     if (!sc.hasNextDouble()) {
                         System.out.println("Invalid input. Price must be a number.");
-                        sc.next(); break;
+                        sc.next();
+                        break;
                     }
                     double price = sc.nextDouble();
                     System.out.print("Enter Stock: ");
                     if (!sc.hasNextInt()) {
                         System.out.println("Invalid input. Stock must be a number.");
-                        sc.next(); break;
+                        sc.next();
+                        break;
                     }
                     int stock = sc.nextInt();
                     Product newProduct = new Product(newId, newName, price, stock);
@@ -97,7 +107,8 @@ public class GroceryStoreSystem {
                     System.out.print("Enter Product ID to remove: ");
                     if (!sc.hasNextInt()) {
                         System.out.println("Invalid input. ID must be a number.");
-                        sc.next(); break;
+                        sc.next();
+                        break;
                     }
                     int removeId = sc.nextInt();
                     if (inventory.removeProduct(removeId)) System.out.println("Product removed.");
@@ -108,13 +119,15 @@ public class GroceryStoreSystem {
                     System.out.print("Enter Product ID: ");
                     if (!sc.hasNextInt()) {
                         System.out.println("Invalid input. ID must be a number.");
-                        sc.next(); break;
+                        sc.next();
+                        break;
                     }
                     int updateId = sc.nextInt();
                     System.out.print("Enter new stock: ");
                     if (!sc.hasNextInt()) {
                         System.out.println("Invalid input. Stock must be a number.");
-                        sc.next(); break;
+                        sc.next();
+                        break;
                     }
                     int newStock = sc.nextInt();
                     if (inventory.updateStock(updateId, newStock)) System.out.println("Stock updated.");
@@ -125,13 +138,15 @@ public class GroceryStoreSystem {
                     System.out.print("Enter Product ID: ");
                     if (!sc.hasNextInt()) {
                         System.out.println("Invalid input. ID must be a number.");
-                        sc.next(); break;
+                        sc.next();
+                        break;
                     }
                     int pid = sc.nextInt();
                     System.out.print("Enter Quantity: ");
                     if (!sc.hasNextInt()) {
                         System.out.println("Invalid input. Quantity must be a number.");
-                        sc.next(); break;
+                        sc.next();
+                        break;
                     }
                     int qty = sc.nextInt();
                     if (qty <= 0) {
@@ -254,13 +269,15 @@ public class GroceryStoreSystem {
                     System.out.print("Enter Product ID to update: ");
                     if (!sc.hasNextInt()) {
                         System.out.println("Invalid input. ID must be a number.");
-                        sc.next(); break;
+                        sc.next();
+                        break;
                     }
                     int updateId = sc.nextInt();
                     System.out.print("Enter new quantity: ");
                     if (!sc.hasNextInt()) {
                         System.out.println("Invalid input. Quantity must be a number.");
-                        sc.next(); break;
+                        sc.next();
+                        break;
                     }
                     int newQty = sc.nextInt();
                     if (newQty <= 0) {
